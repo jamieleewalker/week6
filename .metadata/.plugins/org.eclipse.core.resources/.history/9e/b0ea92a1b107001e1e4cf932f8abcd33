@@ -1,0 +1,25 @@
+package week6;
+
+class Card {
+
+    private Suit suit;
+    private int rank;
+
+    public Card(Suit suit, int rank) {
+        this.suit = suit;
+        this.rank = rank;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+}
+
+enum Suit {
+
+    SPADES, HEARTS, DIAMONDS, CLUBS
+}
