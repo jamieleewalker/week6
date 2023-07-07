@@ -1,38 +1,69 @@
 package week6;
+
 import java.util.*;
 
+// This class represents a player in a card game.
 class Player {
 
-private String name;
-private List<Card> hand = new ArrayList<>();
-private int score = 0;
+    // The name of the player.
+    private String name;
 
-public Player(String name) {
-    this.name = name;
-}
+    // The player's hand of cards.
+    private List<Card> hand = new ArrayList<>();
 
-public void describe() {
-    System.out.println("Player name: " + name + ", Player score: " + score);
-    for (Card card : hand) {
-        card.describe();
+    // The player's score.
+    private int score = 0;
+
+    // Constructs a new player with the specified name.
+    public Player(String name) {
+        // Set the player's name.
+        this.name = name;
     }
-}
 
-public Card flip() {
-    return hand.remove(0);
-}
+    // Describes the player.
+    public void describe() {
+        // Print the player's name and score.
+        System.out.println("Player name: " + name + ", Player score: " + score);
 
-public void draw(Deck deck) {
-    hand.add(deck.draw());
-}
-public boolean isOut() {
-    return hand.isEmpty();
-}
+        // Iterate over the player's hand of cards and print each card.
+        for (Card card : hand) {
+            card.describe();
+        }
+    }
 
-public void incrementScore() {
-    score++;
-}
-public int getScore() {
-    return score;
-}
+    // Flips the top card from the player's hand.
+    public Card flip() {
+        // Remove the top card from the player's hand.
+        Card card = hand.remove(0);
+
+        // Return the flipped card.
+        return card;
+    }
+
+    // Draws a card from the deck and adds it to the player's hand.
+    public void draw(Deck deck) {
+        // Draw a card from the deck.
+        Card card = deck.draw();
+
+        // Add the card to the player's hand.
+        hand.add(card);
+    }
+
+    // Returns true if the player is out of cards, false otherwise.
+    public boolean isOut() {
+        // Return true if the player's hand is empty, false otherwise.
+        return hand.isEmpty();
+    }
+
+    // Increments the player's score by 1.
+    public void incrementScore() {
+        // Increment the player's score.
+        score++;
+    }
+
+    // Returns the player's score.
+    public int getScore() {
+        // Return the player's score.
+        return score;
+    }
 }
