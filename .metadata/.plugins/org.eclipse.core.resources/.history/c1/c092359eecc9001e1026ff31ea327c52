@@ -10,7 +10,7 @@ class Deck {
 
     // Constructs a new deck of cards.
     public Deck() {
-        // Iterate over the values 2-26 and for each value, iterate over the suits and add a new card to the deck.
+        // Iterate over the values 2-14 and for each value, iterate over the suits and add a new card to the deck.
         for (int i = 2; i <= 26; i++) {
             for (Suit suit : Suit.values()) {
                 getCards().add(new Card(i, suit.name()));
